@@ -16,7 +16,21 @@ Game of Thrones data visualization using T-SNE challenge by @Sirajology on [Yout
 Run `python main.py` and it would perform visualizations on all the three data files given and show plots with data projected onto 2 dimensions using T-SNE.
 
 ## Results
+
+Raw Data             	|  Analyzed Data
+:-------------------------:|:-------------------------:
+<img src="Visualizations/DataCollected/attacker_outcome.png" alt="" width="450" height="350"> 	| <img src="Visualizations/AnalyzedData/attacker_outcome.png" alt="" width="450" height="350">
+<img src="Visualizations/DataCollected/actual_char_predictions.png" alt="" width="450" height="350"> 	| <img src="Visualizations/AnalyzedData/actual_char_predictions.png" alt="" width="450" height="350">
+<img src="Visualizations/DataCollected/book_of_death.png" alt="" width="450" height="350"> 	| <img src="Visualizations/AnalyzedData/book_of_death.png" alt="" width="450" height="350">
+<img src="Visualizations/DataCollected/death_year.png" alt="" width="450" height="350"> 	| <img src="Visualizations/AnalyzedData/death_year.png" alt="" width="450" height="350">
+<img src="Visualizations/DataCollected/is_alive.png" alt="" width="450" height="350"> 	| <img src="Visualizations/AnalyzedData/is_alive.png" alt="" width="450" height="350">
+<img src="Visualizations/DataCollected/is_noble.png" alt="" width="450" height="350"> 	| <img src="Visualizations/AnalyzedData/is_noble.png" alt="" width="450" height="350">
+<img src="Visualizations/DataCollected/is_popular.png" alt="" width="450" height="350"> 	| <img src="Visualizations/AnalyzedData/is_popular.png" alt="" width="450" height="350">
+<img src="Visualizations/DataCollected/major_capture.png" alt="" width="450" height="350"> 	| <img src="Visualizations/AnalyzedData/major_capture.png" alt="" width="450" height="350">
+<img src="Visualizations/DataCollected/major_death.png" alt="" width="450" height="350"> 	| <img src="Visualizations/AnalyzedData/major_death.png" alt="" width="450" height="350">
+
 The Visualizations folder has the raw data collected (images) in "DataCollected" as well as some analysis that was done on them in "AnalyzedData"
+
 
 ## Learning Outcomes
 
