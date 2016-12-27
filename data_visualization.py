@@ -9,8 +9,11 @@ from sklearn.manifold import TSNE
 # visulaize the important characteristics of the dataset
 import matplotlib.pyplot as plt
 
-def get_data(file_name, label_name, test_percent):
+def get_data(file_name, label_name, test_percent, drop_rows = 0):
 	dataframe_all = pd.read_csv(file_name)
+	if drop_rows == 1:
+		# Drop rows which don't have values specified for all the columns
+		dataframe_all = dataframe_all.dropna(axis=0, how='any')
 	num_rows = dataframe_all.shape[0]
 	# step 2: remove useless data
 	# count the number of missing elements (NaN) in each column
@@ -44,7 +47,7 @@ def get_data(file_name, label_name, test_percent):
 	x_train, x_test, y_train, y_test = train_test_split(x_std, y, test_size = test_percent, random_state = 0)
 	return x_train, x_test, y_train, y_test
 
-def perform_tsne(x_test, y_test):
+def perform_tsne(x_test, y_test, title):
 	# t-distributed Stochastic Neighbor Embedding (t-SNE) visualization
 	tsne = TSNE(n_components=2, random_state=0)
 	x_test_2d = tsne.fit_transform(x_test)
@@ -58,5 +61,5 @@ def perform_tsne(x_test, y_test):
 	plt.xlabel('X in t-SNE')
 	plt.ylabel('Y in t-SNE')
 	plt.legend(loc='upper left')
-	plt.title('t-SNE visualization of test data')
+	plt.title('t-SNE visualization for ' + title)
 	plt.show()
