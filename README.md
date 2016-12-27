@@ -1,30 +1,27 @@
-#How to Best Visualize a Dataset Easily
+# Game Of Thrones Data Visualization using T-SNE
 
-#Overview
+* Given data about the battles, character-deaths and character-predictions from the Game Of Thrones series, analyze the data and visualize it in a way that a classifier would.
+* Essentially draw out various kinds of boundaries that would fit the data well and allow predictions with minimal error rates.
+* Performed T-SNE dimensionality reduction to 2 dimensions so it could be visualized on a plane. Using 3 dimensions would allow for better visualizations but training models to fit that data might not be the best at times.
 
-This is the code for [this](https://youtu.be/yQsOFWqpjkE) video by Siraj Raval on Youtube. The human activities dataset contains 5 classes (sitting-down, standing-up, standing, walking, and sitting) collected on 8 hours of activities of 4 healthy subjects. The data set is downloaded from [here](http://groupware.les.inf.puc-rio.br/har#ixzz4Mt0Teae2). This code downloads the dataset, cleans it, creates feature vectors, then uses [T-SNE](https://lvdmaaten.github.io/tsne/) to reduce the dimensionality of the feature vectors to just 2. Then, we use matplotlib to visualize the data. 
+## Data Visualization Challenge
+Game of Thrones data visualization using T-SNE challenge by @Sirajology on [Youtube](https://www.youtube.com/watch?v=yQsOFWqpjkE)
 
-##Dependencies
+## Dependencies
+* numpy
+* pandas
+* scikit-learn
 
-* pandas(http://pandas.pydata.org/) 
-* numpy (http://www.numpy.org/) 
-* scikit-learn (http://scikit-learn.org/) 
-* matplotlib (http://matplotlib.org/) 
+## Usage
+Run `python main.py` and it would perform visualizations on all the three data files given and show plots with data projected onto 2 dimensions using T-SNE.
 
-Install dependencies via '[pip](https://pypi.python.org/pypi/pip) install'. (i.e pip install pandas). 
+## Results
+The Visualizations folder has the raw data collected (images) in "DataCollected" as well as some analysis that was done on them in "AnalyzedData"
 
-##Usage
+## Learning Outcomes
 
-To run this code, just run the following in terminal: 
-
-`python data_visualization.py`
-
-##Challenge
-
-The challenge for this video is to visualize [this](https://www.kaggle.com/mylesoneill/game-of-thrones) Game of Thrones dataset. Use T-SNE to lower the dimensionality of the data and plot it using matplotlib. In your README, write our 2-3 sentences of something you discovered about the data after visualizing it. This will be great practice in understanding why dimensionality reduction is so important and analyzing data visually.
-
-##Due Date is December 29th 2016
-
-##Credits
-
-The credits for this code go to [Yifeng-He](https://github.com/Yifeng-He). I've merely created a wrapper around the code to make it easy for people to get started.
+* Not all data can be reduced and visualized well in 2 dimensions, some may require more and its hard to select the correct amount of dimensions we want to reduce our data to get the best results.
+* There are always outliers that don't fit well with the predictions, but the percentage is generally quite small.
+* Some data can be split well with just linear classifiers whereas some require more advanced types of classification and fitting a linear boundary in this 2 dimensional space might not be enough.
+* Using kernels which map these two dimensions into higher ones and then fitting classifiers would do well at times.
+* Apart from T-SNE, PCA (Principle Component Analysis) and LDA (Linear Discriminant Analysis) are some other alternatives to perform dimensionality reduction. They work in a similar to T-SNE where they compute a matrix of weights (mainly using eigen vector decompositions in various forms) which get multiplied with the data (in a matrix dot product form) to get the final reduced dimensional form of the data.
